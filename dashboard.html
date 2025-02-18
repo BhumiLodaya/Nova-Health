@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="background-img">
+
+    <!-- Top Right Navigation (Dropdown + Logout) -->
+    <div class="top-nav">
+        <div class="dropdown">
+            <button class="dropbtn">Features ⏬</button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('add_period') }}">Period Tracking</a>
+                <a href="{{ url_for('add_symptom') }}">Add Symptom</a>
+            </div>
+        </div>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger logout-btn logout-box">Logout</a>
+    </div>
+
+    <div class="container">
+        <h2 class="text-center welcome-box">Welcome, {{ current_user.name }}</h2>
+        <h3 class="text-center mb-4 dashboard-box">Your Dashboard</h3>
+
+        <!-- Dashboard sections -->
+        <div class="row">
+            <!-- Workouts -->
+            <div class="col dashboard-section workout-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fas fa-running"></i> Workouts</h4>
+                        <ul class="list-group" id="workout-list">
+                            {% for workout in workouts %}
+                                <li class="list-group-item">
+                                    <span>{{ workout.workout_type }} - {{ workout.duration }} minutes</span>
+                                    <button class="delete-btn" data-id="{{ workout.id }}">🗑️</button>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <!-- Add Workout Form -->
+                        <form id="add-workout-form" class="mt-3">
+                            <input type="text" id="workout-type" placeholder="Workout Type" required>
+                            <input type="number" id="workout-duration" placeholder="Duration (minutes)" required>
+                            <button type="submit" class="btn btn-primary">Add Workout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hydration -->
+            <div class="col dashboard-section hydration-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fas fa-tint"></i> Hydration</h4>
+                        <ul class="list-group" id="hydration-list">
+                            {% for hydration in hydrations %}
+                                <li class="list-group-item">
+                                    <span>{{ hydration.water_intake }} ml</span>
+                                    <button class="delete-btn" data-id="{{ hydration.id }}">🗑️</button>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <!-- Add Hydration Form -->
+                        <form id="add-hydration-form" class="mt-3">
+                            <input type="number" id="water-intake" placeholder="Water Intake (ml)" required>
+                            <button type="submit" class="btn btn-primary">Add Hydration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/app.js"></script>
+</body>
+</html>
