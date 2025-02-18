@@ -1,0 +1,204 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.background-img {
+    background-image: url('../static/images/image2.jpg'); /* Updated background image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.col {
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+}
+
+/* Welcome Box Style */
+.welcome-box, .dashboard-box, .logout-box {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block; /* Adjust width to fit content */
+    text-align: center;
+    margin-bottom: 20px; /* Add some margin for spacing */
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+/* Adjusted sizes for Workout and Hydration sections */
+.workout-card,
+.hydration-card {
+    width: 100%; /* Adjust width as needed */
+    flex: none;
+    max-width: 600px; /* Adjust maximum width as needed */
+}
+
+/* List Group Styles */
+.list-group {
+    list-style: none;
+    padding: 0;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s ease-in-out;
+}
+
+.list-group-item:hover {
+    background-color: #f9f9f9;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff4757;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    color: #d63031;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropbtn:hover {
+    background-color: #ff4757;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Logout Box Style */
+.logout-box {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff4757;
+}
